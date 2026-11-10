@@ -144,7 +144,7 @@ function RootComponent() {
             </div>
             <SearchDialog />
             <FavoritesSheet />
-            <Toaster position="bottom-left" dir="rtl" toastOptions={{ style: { fontFamily: "var(--font-sans)", borderRadius: 0 } }} />
+            <Toaster position="bottom-left" dir="rtl" />
           </UiStateProvider>
         </FavoritesProvider>
       </DirectionProvider>
