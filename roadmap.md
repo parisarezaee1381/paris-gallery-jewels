@@ -8,3 +8,4 @@
 - [ ] About page
 - [ ] Favorites drawer persisted locally
 - [ ] Tests for reservation/price rules; browser check desktop + mobile
+- [ ] Swap in the owner's own product photos (waiting for her to attach them in chat)
