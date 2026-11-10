@@ -5,23 +5,33 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-sm text-sm font-medium cursor-pointer transition-[background-color,color,border-color,transform] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-45 disabled:cursor-not-allowed active:translate-y-px [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+        /** Primary: solid ink */
+        default: "bg-primary text-primary-foreground hover:bg-brand",
+        /** Burgundy accent — reservation */
+        brand: "bg-brand text-brand-foreground hover:bg-brand-deep",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        /** Secondary: hairline outline */
         outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "border border-foreground bg-transparent text-foreground hover:bg-foreground hover:text-background",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-border",
+        ghost: "hover:bg-secondary text-foreground",
+        link: "text-foreground underline decoration-brand decoration-1 underline-offset-[6px] hover:text-brand px-0",
+        whatsapp: "bg-whatsapp text-whatsapp-foreground hover:bg-whatsapp/90",
+        /** For dark (ink) sections */
+        ivory: "bg-ink-foreground text-ink hover:bg-brand hover:text-brand-foreground",
+        "outline-ivory":
+          "border border-ink-foreground/70 bg-transparent text-ink-foreground hover:bg-ink-foreground hover:text-ink",
       },
       size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3 text-xs",
-        lg: "h-10 rounded-md px-8",
-        icon: "h-9 w-9",
+        default: "h-11 px-6",
+        sm: "h-9 px-4 text-xs",
+        lg: "h-13 px-8 text-base",
+        icon: "h-11 w-11",
+        "icon-sm": "h-9 w-9",
       },
     },
     defaultVariants: {
